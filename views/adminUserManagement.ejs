@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href="/stylesheets/adminUserManagement.css"/>
+    <link rel="stylesheet" href="/lib/layui/css/layui.css" media="all">
+    <script src="/lib/jquery-3.1.1.min.js"></script>
+    <script src="/lib/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+    <script src="/font_alibaba_1.0/iconfont.js"></script>
+    <script src="/lib/layui/layui.js"></script>
+  </head>
+  <body>
+    <input id="curPage" type="hidden" value="<%= data.curPage %>">
+    <input id="layid" type="hidden" value="<%= data.layid %>">
+    <div class="top">
+        <div class="left">
+            <div id="back" class="back">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fanhui"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="right">
+            <div id="deleteMany" class="deleteMany">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-piliangshanchu"></use>
+                </svg>
+              </div>
+              <div class="user">
+                  <%= admin.aname + " (" + admin.ano + ")" %>
+              </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="layui-tab layui-tab-brief" lay-filter="userManagement">
+            <ul class="layui-tab-title">
+              <li class="layui-this" lay-id="0"><span>学生账号</span></li>
+              <li lay-id="1"><span>教师账号</span></li>
+              <li lay-id="2"><span>管理员账号</span></li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <div class="guide">
+                        <input class="check" type="checkbox" name="allStudent">
+                        <div class="index">序号</div>
+                        <div class="username">用户名</div>
+                        <div class="name">姓名</div>
+                        <div class="class">班级</div>
+                        <div class="time">注册时间</div>
+                        <div class="zhanwei"></div>
+                    </div>
+                    <div class="content">
+                        <% if (data.layid == 0) { %>
+                        <%  data.list.map(function (item, index){ %>
+                            <div class="item">
+                                <input id="select_<%= item.id %>" class="check" type="checkbox" name="studentSelect" value="<%= item.sno %>" onclick="studentBoxCheck(this)">
+                                <div class="index"><%= index + 1 %></div>
+                                <div class="username"><%= item.sno %></div>
+                                <div class="name"><%= item.sname %></div>
+                                <div class="class"><%= item.sclass %></div>
+                                <div class="time"><%= item.time %></div>
+                            </div>
+                        <%  }) %>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <div class="guide">
+                        <input class="t_check" type="checkbox" name="allTeacher">
+                        <div class="t_index">序号</div>
+                        <div class="t_username">用户名</div>
+                        <div class="t_name">姓名</div>
+                        <div class="t_state">状态</div>
+                        <div class="t_time">注册时间</div>
+                        <div class="t_operator">操作</div>
+                        <div class="t_zhanwei"></div>
+                    </div>
+                    <div class="content">
+                        <% if (data.layid == 1) { %>
+                        <%  data.list.map(function (item, index){ %>
+                            <div class="item">
+                                <input id="select_<%= item.id %>" class="t_check" type="checkbox" name="teacherSelect" value="<%= item.tno %>" onclick="teacherBoxCheck(this)">
+                                <div class="t_index"><%= index + 1 %></div>
+                                <div class="t_username"><%= item.tno %></div>
+                                <div class="t_name"><%= item.tname %></div>
+                                <%   var state = item.state ? "已启用" : "已禁用";%>
+                                <div class="t_state"><%= state %></div>
+                                <div class="t_time"><%= item.time %></div>
+                                <div class="t_operator">
+                                <% if (item.state) {%>
+                                    <div id="setTeacherState_<%= item.id %>" class="setTeacherState">
+                                        <svg class="icon" aria-hidden="true">
+                                            <use xlink:href="#icon-jinyong"></use>
+                                        </svg>
+                                    </div>
+                                <% } else {%>
+                                    <div id="changeTeacherState_<%= item.id %>" class="changeTeacherState">
+                                        <svg class="icon" aria-hidden="true">
+                                            <use xlink:href="#icon-qiyong"></use>
+                                        </svg>
+                                    </div>  
+                                <% } %>     
+                                </div>
+                            </div>
+                        <%  }) %>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <div class="guide">
+                        <input class="t_check" type="checkbox" name="allAdmin">
+                        <div class="t_index">序号</div>
+                        <div class="t_username">用户名</div>
+                        <div class="t_name">姓名</div>
+                        <div class="t_state">状态</div>
+                        <div class="t_time">注册时间</div>
+                        <div class="t_operator">操作</div>
+                        <div class="t_zhanwei"></div>
+                    </div>
+                    <div class="content">
+                        <% if (data.layid == 2) { %>
+                        <%  data.list.map(function (item, index){ %>
+                            <div class="item">
+                                <input id="select_<%= item.id %>" class="t_check" type="checkbox" name="adminSelect" value="<%= item.ano %>" onclick="adminBoxCheck(this)">
+                                <div class="t_index"><%= index + 1 %></div>
+                                <div class="t_username"><%= item.ano %></div>
+                                <div class="t_name"><%= item.aname %></div>
+                                <%   var state = item.state ? "已启用" : "已禁用";%>
+                                <div class="t_state"><%= state %></div>
+                                <div class="t_time"><%= item.time %></div>
+                                <div class="t_operator">
+                                <% if (item.state) {%>
+                                    <div id="setAdminState_<%= item.id %>" class="setTeacherState">
+                                        <svg class="icon" aria-hidden="true">
+                                            <use xlink:href="#icon-jinyong"></use>
+                                        </svg>
+                                    </div>
+                                <% } else {%>
+                                    <div id="changeAdminState_<%= item.id %>" class="changeTeacherState">
+                                        <svg class="icon" aria-hidden="true">
+                                            <use xlink:href="#icon-qiyong"></use>
+                                        </svg>
+                                    </div>  
+                                <% } %>     
+                                </div>
+                            </div>
+                        <%  }) %>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </div>
+    <div class="bottom">
+        <ul>
+            <% var character = "student";%>
+            <% if(data.layid == 0) {%>
+            <%  character="student";%>
+            <% } %>
+            <% if(data.layid == 1) {%>
+            <%  character="teacher";%>
+            <% } %>
+            <% if(data.layid == 0) {%>
+            <%  character="admin";%>
+            <% } %>
+            <% var pre = data.curPage - 1 > 0 ? data.curPage - 1 : data.curPage;%>
+            <% var next = data.curPage + 1 > data.toal ? data.curPage : parseInt(data.curPage) + 1;%>
+            <li><a <% if (data.curPage > 1) { %> href="/<%= character%>/userManagement?layid=<%= data.layid %>&page=<%= pre %>" <% } %> ><</a></li>
+            <% if (data.total > 0)  { %>
+                <%  if (data.total <= 10) { %>
+                    <% for (var i = 1; i <= data.total; i++) { %>
+                        <li><a href="/<%= character%>/userManagement?layid=<%= data.layid %>&page=<%= i %>"  <% if (data.curPage == i) { %> class="active" <% } %> > <%= i %> </a></li>
+                    <% } %>
+                <% } %>
+            <% } %>
+            <li><a <% if (data.curPage < data.total) { %> href="/<%= character%>/userManagement?layid=<%= data.layid %>&page=<%= next %>" <% } %> >></a></li>
+        </ul>
+    </div>
+  </body>
+  <script src="/javascripts/adminUserManagement.js"></script>
+</html>

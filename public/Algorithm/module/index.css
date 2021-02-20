@@ -1,0 +1,59 @@
+/* 阿里巴巴图标 */
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.top{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.back{
+    margin-left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+*{
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+html {
+	font-size: 125%;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+    overflow: hidden;
+    background: #f6f5f7;
+    width: 100%;
+    height: 100%;
+    -moz-user-select:none;/*火狐*/
+    -webkit-user-select:none;/*webkit浏览器*/
+    -ms-user-select:none;/*IE10*/
+    -khtml-user-select:none;/*早期浏览器*/
+    user-select:none;
+}

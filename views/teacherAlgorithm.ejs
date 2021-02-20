@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>算法可视化模块</title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href="/stylesheets/teacherAlgorithm.css"/>
+    <link rel="stylesheet" href="/lib/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/lib/swiper/swiper.min.css">
+	<script src="/lib/jquery-3.1.1.min.js"></script>
+	<script src="/lib/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+    <script src="/font_alibaba_1.0/iconfont.js"></script>
+  </head>
+  <body>
+    <div class="top">
+        <div class="left">
+            <div class="back">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fanhui"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="right">
+            <div class="create">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-piliang"></use>
+                </svg>
+            </div>
+            <div class="upload">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-shangchuan"></use>
+                </svg>
+            </div>
+            <div class="user">
+                <%= teacher.tname + " (" + teacher.tno + ")" %>
+            </div>
+        </div>
+    </div>
+	<!-- 功能选择swiper slider -->
+    <div class="swiper-container">
+			<div class="swiper-wrapper">
+			<% data.list.map(function (item, index){ %>
+				<div class="swiper-slide">
+					<div class="card"><!--第一个卡片-->
+						<div class="face face1"> <!--显示页-->
+                            <div class="content"> <!--显示页内容-->
+                                <% var state = item.state ? "已发布" : "未发布";%>
+								<h3><%= item.znname %><br><% if (item.enname != "null") {%> <%= item.enname %> <%}%><br><%= state %></h3>
+							</div>
+						</div>
+						<div class="face face2"> <!--附页-->
+							<div class="content">
+                                <p><%- item.describe %></p>
+                                <a href=<%= item.path %>>开始演示</a>
+                                <% if (item.state == false) { %>
+                                <a href="javascript:void(0)" onclick="public(<%= item.id %>)">发布</a>
+                                <% } else {%>
+                                <a href="javascript:void(0)" onclick="depublic(<%= item.id %>)">取消发布</a>
+                                <% } %>
+                                <a href="javascript:void(0)" onclick="shanchu(<%= item.id %>)">删除</a>
+                                <a href="/teacher/teacherEditorAlgorithm?id=<%= item.id %>">编辑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% }); %>
+			</div>
+    </div>
+    <script src="/lib/swiper/swiper.min.js"></script>
+    <script src="/javascripts/teacherAlgorithm.js"></script>
+  </body>
+</html>

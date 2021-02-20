@@ -1,0 +1,149 @@
+/* 阿里巴巴图标 */
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    
+	height: 100vh;
+    background: #f6f5f7;
+    overflow: hidden;
+}
+
+.top{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+}
+
+.left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.right{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.back{
+    margin-left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.user{
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 500px;
+    max-width: 100%;
+    min-height: 480px;
+    margin: 0 auto;
+    padding: 40px 20px 40px 20px;
+    margin-top: 20px;
+}
+
+.container .line{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* border: 1px solid black; */
+}
+
+.container .line span{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.container .line input{
+    border-radius: 10px;
+    padding: 15px 10px;
+    text-align: center;
+    background: #eee;
+    border: none;
+    width: 100%;
+}
+
+.container .line .form-tip{
+    display: block;
+    height: 24px;
+    text-align: center;
+    color: red;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+
+.container .line textarea{
+    height: 120px;
+    border-radius: 10px;
+    padding: 15px 10px;
+    text-align: center;
+    background: #eee;
+    border: none;
+    width: 100%;
+}
+
+.container .line_btn{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    /* border: 1px solid black; */
+}
+
+.container .line_btn1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    /* border: 1px solid black; */
+}
+
+.container .line_btn1 .submitBtn{
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    background: #eee;
+    width: 50%;
+    cursor: pointer;
+}

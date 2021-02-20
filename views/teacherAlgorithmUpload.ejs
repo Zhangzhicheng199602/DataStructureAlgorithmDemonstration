@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>算法可视化模块</title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href="/stylesheets/teacherAlgorithmUpload.css"/>
+    <link rel="stylesheet" href="/lib/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/lib/swiper/swiper.min.css">
+	<script src="/lib/jquery-3.1.1.min.js"></script>
+	<script src="/lib/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+    <script src="/font_alibaba_1.0/iconfont.js"></script>
+  </head>
+  <body>
+    <div class="top">
+        <div class="left">
+            <div class="back">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fanhui"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="right">
+            <div class="user">
+                <%= teacher.tname + " (" + teacher.tno + ")" %>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <form action="/test/upload" id="algorithmForm" method = "post" enctype= "multipart/form-data">
+            <input type="hidden" name="tid" value="<%= teacher.tno %>">
+            <input type="hidden" name="tname" value="<%= teacher.tname %>">
+            <div class="line">
+                <span>算法名称</span>
+                <input id="zn_name" type="text" class="form-input" name="zn_name"/>
+                <div id="znname-tip" class="form-tip"></div>
+            </div>
+            <div class="line">
+                <span>英文名称</span>
+                <input id="en_name" type="text" class="form-input" name="en_name"/>
+                <div id="enname-tip" class="form-tip"></div>
+            </div>
+            <div class="line">
+                <span>算法描述</span>
+                <textarea id="describe" type="text" class="form-input" maxlength="120" name="describe" placeholder="内容低于60字"></textarea>
+                <div id="describe-tip" class="form-tip"></div>
+            </div>
+            <div class="line_btn">
+                <input id="file" type="file" name = "file" multiple="multiple">
+            </div>
+
+            <div class="line_btn1">
+                <div class="submitBtn">确定上传</div>
+            </div>
+        </form>
+    </div>
+    <script src="/lib/swiper/swiper.min.js"></script>
+    <script src="/javascripts/teacherAlgorithmUpload.js"></script>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+/* 阿里巴巴图标 */
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    
+	height: 100vh;
+    background: #f6f5f7;
+    overflow: hidden;
+}
+
+.top{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.right{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.back{
+    margin-left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.user{
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.card{
+    position: relative; /*相对定位*/
+}
+.card .face{ 
+    width: 300px; 
+    height: 200px; 
+    transition: 0.5s; /*过渡时间*/
+	border-radius: 10px;
+}
+.card .face.face1{ 
+    position: relative; 
+    background: #fff; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1; 
+    transform: translateY(100px); /*2D转换，Y轴移动*/
+} 
+.card:hover .face.face1{ /*此处为card标签悬停时，内容1复位*/
+    background: #ff0057; 
+    transform: translateY(0); 
+	border-radius: 10px 10px 0 0;
+}
+.card .face.face1 .content{
+    opacity: 0.8; /*透明度*/
+    transition: 0.5s; 
+}
+.card:hover .face.face1 .content{ /*此处为card标签悬停时，更改封面的透明度*/
+    opacity: 1; /*透明度*/
+}
+.card .face.face1 .content h3{
+    margin: 10px 0 0; 
+    padding: 0; 
+    color: black; 
+    text-align: center; /*字体居中*/
+    font-size: 1.5em; /*字体大小*/
+}
+
+.card:hover .face.face1 .content h3{
+	color: #fff;
+}
+
+.card .face.face2{
+    position: relative; 
+    background: #fff; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
+    box-sizing: border-box; /*设置盒子模型内布局，此处为元素的内边距盒边框不会影响最终大小*/
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); /*阴影*/
+    transform: translateY(-100px); /*2D转换，Y轴移动*/
+}
+.card:hover .face.face2{ /*此处为card标签悬停时，内容2复位*/
+    transform: translateY(0px); 
+	border-radius: 0 0 10px 10px;
+}
+.card .face.face2 p{
+    margin: 0; 
+    padding: 0; 
+}
+.card .face.face2 a{
+    margin:  15px 0 0; 
+    display: inline-block; /*设置为行内块元素*/
+    text-decoration: none; /*文字样式，此处为了删除下划线*/
+    font-weight: 900; /*字体粗细*/
+    color: #333; 
+    padding: 5px; 
+    border: 1px solid #333; 
+}
+.card .face.face2 a:hover{ /*此处为a标签悬停时*/
+    background: #333; 
+    color: #fff; 
+}
+
+
+.swiper-container {
+	margin-top: 10vh;
+    width: 100%;
+	/* padding-bottom: 30px; */
+}
+
+.swiper-container .swiper-wrapper .swiper-slide {
+	 width: 400px;
+	 padding-bottom: 100px;
+}
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href="/stylesheets/teacherHome.css"/>
+    <link rel="stylesheet" href="/lib/swiper/swiper.min.css">
+	<script src="/lib/jquery-3.1.1.min.js"></script>
+	<script src="/lib/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+    <script src="/font_alibaba_1.0/iconfont.js"></script>
+  </head>
+  <body>
+    <div class="top">
+	  <!-- 注销按钮 -->
+      <div class="logout">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-zhuxiaodenglu"></use>
+        </svg>
+	  </div>
+	  <!-- 消息按钮 -->
+      <div class="message">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-xiaoxi"></use>
+        </svg>
+	  </div>
+	  <!-- 用户信息 -->
+      <div class="user">
+        <%= teacher.tname + " (" + teacher.tno + ")" %>
+      </div>
+	</div>
+	<!-- 功能选择swiper slider -->
+    <div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="card">
+						<div class="slideText">
+							<h3>个人信息</h3>
+						</div>
+						<div class="content">
+							<img src="/images/职工个人信息.png"/>
+							<a href="/teacher/information">进入</a>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="card">
+						<div class="slideText">
+							<h3>实验笔记</h3>
+						</div>
+						<div class="content">
+							<img src="/images/教师实验笔记列表.png"/>
+							<a href="/teacher/note">进入</a>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="card">
+						<div class="slideText">
+							<h3>算法可视化模块</h3>
+						</div>
+						<div class="content">
+							<img src="/images/教师算法模块.png"/>
+							<a href="/teacher/algorithm">进入</a>
+						</div>
+					</div>
+				</div>
+			</div>
+    </div>
+    <script src="/lib/swiper/swiper.min.js"></script>
+    <script src="/javascripts/teacherHome.js"></script>
+  </body>
+</html>

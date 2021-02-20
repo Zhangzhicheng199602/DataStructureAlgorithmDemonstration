@@ -1,0 +1,296 @@
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f5f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 顶部导航栏 */
+.top{
+    position: relative;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    /* box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22); */
+}
+
+.left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.right{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.back{
+    margin-left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.create{
+    margin-right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.user{
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+/* 中间内容 */
+.container{
+    position: relative;
+    width: 100%;
+    height: 84vh;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll;
+    border-bottom: 3px solid black;
+}
+
+.container .guide{
+    position: relative;
+    width: 100%;
+    padding: 10px 0 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    /* border: 1px solid black; */
+}
+
+.container .guide .guideLeft{
+    width: 55%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container .guide .guideLeft .index{
+    width: 60px;
+}
+
+.container .guide .guideLeft .title{
+    width: 50%;
+    padding: 0 10px 0 10px;
+    overflow: hidden;/*超出部分隐藏*/
+    white-space: nowrap;/*不换行*/
+    text-overflow:ellipsis;/*超出部分文字以...显示*/
+    /* border: 1px solid black; */
+}
+
+.container .guide .guideLeft .time{
+    width: 50%;
+    padding: 0 10px 0 10px;
+    overflow: hidden;/*超出部分隐藏*/
+    white-space: nowrap;/*不换行*/
+    text-overflow:ellipsis;/*超出部分文字以...显示*/
+    /* border: 1px solid black; */
+}
+
+.container .guide .guideRight{
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container .guide .guideRight .state{
+    width: 50%;
+    padding: 0 10px 0 10px;
+    overflow: hidden;/*超出部分隐藏*/
+    white-space: nowrap;/*不换行*/
+    text-overflow:ellipsis;/*超出部分文字以...显示*/
+}
+
+.container .guide .guideRight .operator{
+    width: 50%;
+    padding: 0 10px 0 10px;
+    overflow: hidden;/*超出部分隐藏*/
+    white-space: nowrap;/*不换行*/
+    text-overflow:ellipsis;/*超出部分文字以...显示*/
+}
+
+
+.container .item{
+    width: 100%;
+    display: flex;
+    padding: 10px 0 10px 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-top: 1px solid black;
+    /* border: 1px solid black; */
+}
+
+.container .item .itemLeft{
+    width: 55%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container .item .itemLeft .index{
+    width: 60px;
+}
+
+.container .item .itemLeft .title{
+    width: 50%;
+    padding: 0 10px 0 10px;
+    overflow: hidden;/*超出部分隐藏*/
+    white-space: nowrap;/*不换行*/
+    text-overflow:ellipsis;/*超出部分文字以...显示*/
+    /* border: 1px solid black; */
+}
+
+.container .item .itemLeft .time{
+    width: 50%;
+    padding: 0 10px 0 10px;
+    overflow: hidden;/*超出部分隐藏*/
+    white-space: nowrap;/*不换行*/
+    text-overflow:ellipsis;/*超出部分文字以...显示*/
+    /* border: 1px solid black; */
+}
+
+.container .item .itemRight{
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container .item .itemRight .state{
+    width: 50%;
+    padding: 0 10px 0 10px;
+    overflow: hidden;/*超出部分隐藏*/
+    white-space: nowrap;/*不换行*/
+    text-overflow:ellipsis;/*超出部分文字以...显示*/
+}
+
+.container .item .itemRight .operator{
+    width: 50%;
+    padding: 0px 40px 0px 40px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;/*超出部分隐藏*/
+    white-space: nowrap;/*不换行*/
+    text-overflow:ellipsis;/*超出部分文字以...显示*/
+}
+
+.container .item .itemRight .operator .submit{
+    margin-left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.container .item .itemRight .operator .desubmit{
+    margin-left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.container .item .itemRight .operator .read{
+    margin-left: 20px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.container .item .itemRight .operator .delete{
+    margin-left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 底部页面按钮 */
+.bottom{
+    position: relative;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    padding: 0 20px 0px 20px;
+    flex-direction: row-reverse;
+    /* border: 1px solid black; */
+}
+
+.bottom ul{
+    /* position: relative; */
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.bottom ul li{
+    list-style: none;
+}
+
+.bottom ul li a{
+    /* position: relative; */
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    background: #fff;
+    color: #565656;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25), 0 2px 5px rgba(0, 0, 0, 0.22);
+}
+
+.bottom ul li a.active{
+    color: rgba(255, 75, 43, 1);
+    text-shadow: 0 0 20px rgb(255, 75, 43),
+                 0 0 20px rgb(255, 75, 27),
+                 0 0 20px rgb(255, 100, 27),
+                 0 0 20px rgb(255, 224, 27);
+}
+
+.bottom ul li a:hover{
+    color: rgba(255, 75, 43, 1);
+    text-shadow: 0 0 20px rgb(255, 75, 43),
+                 0 0 20px rgb(255, 75, 27),
+                 0 0 20px rgb(255, 100, 27),
+                 0 0 20px rgb(255, 224, 27);
+    cursor: pointer;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href="/stylesheets/teacherCreateAlgorithm.css"/>
+    <link rel="stylesheet" href="/lib/layui/css/layui.css" media="all">
+    <script src="/lib/jquery-3.1.1.min.js"></script>
+    <script src="/lib/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+    <script src="/font_alibaba_1.0/iconfont.js"></script>
+    <script src="/lib/layui/layui.js"></script>
+    <script type="text/javascript" src="/lib/ace/ace.js"></script>
+    <script type="text/javascript" src="/lib/ace/ext-language_tools.js"></script>
+  </head>
+  <body>
+    <div class="top">
+        <div class="left">
+            <div id="back" class="back">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fanhui"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="right">
+            <div id="save" class="save">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-baocun"></use>
+                </svg>
+              </div>
+              <div class="user">
+                  <%= teacher.tname + " (" + teacher.tno + ")" %>
+              </div>
+        </div>
+    </div>
+    <div class="container">
+        <input type="hidden" id="znname" name="znname" value="<%= data.znname %>">
+        <input type="hidden" id="enname" name="enname" value="<%= data.enname %>">
+        <div class="layui-tab layui-tab-brief" lay-filter="code">
+            <ul class="layui-tab-title">
+              <li class="layui-this" lay-id="0"><span><%= data.enname + '.html' %></span></li>
+              <li lay-id="1"><span><%= data.enname + '.css' %></span></li>
+              <li lay-id="2"><span><%= data.enname + '.js' %></span></li>
+              <li lay-id="3"><span>算法描述</span></li>
+            </ul>
+            <div class="layui-tab-content">
+                <div id="html_code_layui" class="layui-tab-item layui-show">
+                    <div id = "html_code" class = "ace_editor"><%= sourceFile.html %></div>
+                </div>
+                <div id="css_code_layui" class="layui-tab-item">
+                    <div id = "css_code" class = "ace_editor"><%= sourceFile.css %></div>
+                </div>
+                <div id="js_code_layui" class="layui-tab-item">
+                    <div id = "js_code" class = "ace_editor"><%= sourceFile.js %></div>
+                </div>
+                <div id="describe_layui" class="layui-tab-item">
+                    <textarea id="describe" type="text"  maxlength="120" name="describe" placeholder="内容低于60字"><%= data.describe %></textarea>
+                </div>
+            </div>
+        </div>      
+    </div>
+  </body>
+  <script src="/javascripts/teacherCreateAlgorithm.js"></script>
+</html>

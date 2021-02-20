@@ -1,0 +1,121 @@
+/* 阿里巴巴图标 */
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    
+	height: 100vh;
+    background: #f6f5f7;
+    overflow: hidden;
+}
+
+/* 顶部导航栏 */
+.top{
+    position: relative;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.logout{
+    margin-right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.message{
+    margin-right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.user{
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.card
+{
+    border-radius: 20px;
+	position: relative;
+	background: #fff;
+	width: 400px;
+    height: 500px;
+	margin: 30px 0 30px 0;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card .content
+{
+	width: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+/* 页面预览图片 */
+.card .content img
+{
+    width: 400px;
+    height: 247px;
+}
+
+.card .content a
+{
+    margin-top: 40px;
+	display: inline-block;
+	text-decoration: none;
+    border-radius: 20px;
+    border: 1px solid #ff4b2b;
+    background: #ff4b2b;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+}
+
+.card .slideText
+{
+	position: relative;
+	width: 100%;
+	height: 90px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card .slideText h3
+{
+	color: #000;
+	font-size: 2em;
+}
+
+.swiper-container {
+      width: 100%;
+}
+
+.swiper-container .swiper-wrapper .swiper-slide {
+  width: 400px;
+  margin-bottom: 10px;
+}
+
