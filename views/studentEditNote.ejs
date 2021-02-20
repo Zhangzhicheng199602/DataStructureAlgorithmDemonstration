@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href="/stylesheets/studentEditNote.css"/>
+    <script src="/lib/jquery-3.1.1.min.js"></script>
+    <script src="/lib/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+    <script src="/font_alibaba_1.0/iconfont.js"></script>
+  </head>
+  <body>
+    <input id="curPage" type="hidden" value="<%= data.curPage %>">
+    <div class="top">
+        <div class="left">
+            <div id="back" class="back">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fanhui"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="right">
+            <div id="save" class="save">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-baocun"></use>
+                </svg>
+              </div>
+              <div class="user">
+                  <%= student.sname + " (" + student.sno + ")" %>
+              </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="note">
+            <form id="createNoteForm" οnsubmit="return false" action="" method="POST">
+                <input type="hidden" name="user" value="<%= student.sname %>">
+                <input type="hidden" name="uid" value="<%= student.sno %>">
+                <input type="hidden" name="id" value="<%= note.id %>">
+                <input type="text" name="title" value="<%= note.title %>">
+                <textarea name="content" class="xheditor"><%= note.content %></textarea>
+            </form>
+        </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="/xheditor/jquery/jquery-1.4.4.min.js"></script>
+  <script type="text/javascript" src="/xheditor/xheditor-1.2.2.min.js"></script>
+  <script type="text/javascript" src="/xheditor/xheditor_lang/zh-cn.js"></script>
+  <script src="/javascripts/studentEditNote.js"></script>
+</html>

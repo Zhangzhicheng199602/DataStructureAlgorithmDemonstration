@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href="/stylesheets/studentNote.css"/>
+    <script src="/lib/jquery-3.1.1.min.js"></script>
+    <script src="/lib/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+    <script src="/font_alibaba_1.0/iconfont.js"></script>
+  </head>
+  <body>
+    <input id="curPage" type="hidden" value="<%= data.curPage %>">
+    <div class="top">
+        <div class="left">
+            <div id="back" class="back">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fanhui"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="right">
+            <div id="create" class="create">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-xinjian"></use>
+                </svg>
+              </div>
+              <div class="user">
+                  <%= student.sname + " (" + student.sno + ")" %>
+              </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="guide">
+            <div class="guideLeft">
+                <div class="index">序号</div>
+                <div class="title">标题</div>
+                <div class="time">最近修改</div>
+            </div>
+            <div class="guideRight">
+                <div class="state">状态</div>
+                <div class="operator">操作</div>
+            </div>
+        </div>
+        <% data.list.map(function(item, index) { %>
+            <div class="item">
+                <input type="hidden" name="id_<%= index+1 %>" value="<%= item.id %>">
+                <div class="itemLeft">
+                    <div class="index"><%= index+1 %></div>
+                    <div class="title"><%= item.title %></div>
+                    <div class="time"><%= item.time %></div>
+                </div>
+                <div class="itemRight">
+                    <% var state = item.state ? "已提交" : "未提交"; %>
+                    <div class="state">
+                        <%= state %>
+                    </div>
+                    <div class="operator">
+                    <% if (state == "未提交") {%>
+                        <div id="submit_<%= index+1 %>" class="submit">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-tijiao"></use>
+                            </svg>
+                        </div>
+                    <% } else { %>
+                        <div id="desubmit_<%= index+1 %>" class="desubmit">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-chehuiqianyue"></use>
+                            </svg>
+                        </div>
+                    <% } %>
+                        <div id="read_<%= index+1 %>" class="read">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-chakan"></use>
+                            </svg>
+                        </div>
+                        <div id="delete_<%= index+1 %>" class="delete">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shanchu"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    <div class="bottom">
+        <ul>
+            <% var pre = data.curPage - 1 > 0 ? data.curPage - 1 : data.curPage;%>
+            <% var next = data.curPage + 1 > data.toal ? data.curPage : parseInt(data.curPage) + 1;%>
+            <li><a <% if (data.curPage > 1) { %> href="/student/note?page=<%= pre %>" <% } %> ><</a></li>
+            <% if (data.total > 0)  { %>
+                <%  if (data.total <= 10) { %>
+                    <% for (var i = 1; i <= data.total; i++) { %>
+                        <li><a href="/student/note?page=<%= i %>"  <% if (data.curPage == i) { %> class="active" <% } %> > <%= i %> </a></li>
+                    <% } %>
+                <% } %>
+            <% } %>
+            <li><a <% if (data.curPage < data.total) { %> href="/student/note?page=<%= next %>" <% } %> >></a></li>
+        </ul>
+    </div>
+  </body>
+  <script src="/javascripts/studentNote.js"></script>
+</html>

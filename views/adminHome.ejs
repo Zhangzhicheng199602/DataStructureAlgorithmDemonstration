@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href="/stylesheets/adminHome.css"/>
+    <link rel="stylesheet" href="/lib/swiper/swiper.min.css">
+	<script src="/lib/jquery-3.1.1.min.js"></script>
+	<script src="/lib/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+    <script src="/font_alibaba_1.0/iconfont.js"></script>
+  </head>
+  <body>
+    <div class="top">
+	  <!-- 注销按钮 -->
+      <div class="logout">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-zhuxiaodenglu"></use>
+        </svg>
+	  </div>
+	  <!-- 消息按钮 -->
+      <div class="message">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-xiaoxi"></use>
+        </svg>
+	  </div>
+	  <!-- 用户信息 -->
+      <div class="user">
+        <%= admin.aname + " (" + admin.ano + ")" %>
+      </div>
+	</div>
+	<!-- 功能选择swiper slider -->
+    <div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="card">
+						<div class="slideText">
+							<h3>个人信息</h3>
+						</div>
+						<div class="content">
+							<img src="/images/职工个人信息.png"/>
+							<a href="/admin/information">进入</a>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="card">
+						<div class="slideText">
+							<h3>用户管理</h3>
+						</div>
+						<div class="content">
+							<img src="/images/用户管理.png"/>
+							<a href="/admin/userManagement">进入</a>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="card">
+						<div class="slideText">
+							<h3>实验笔记管理</h3>
+						</div>
+						<div class="content">
+							<img src="/images/笔记管理.png"/>
+							<a href="/admin/noteManagement">进入</a>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="card">
+						<div class="slideText">
+							<h3>算法可视化管理</h3>
+						</div>
+						<div class="content">
+							<img src="/images/管理员算法管理.png"/>
+							<a href="/admin/algorithmManagement">进入</a>
+						</div>
+					</div>
+				</div>
+			</div>
+    </div>
+    <script src="/lib/swiper/swiper.min.js"></script>
+    <script src="/javascripts/adminHome.js"></script>
+  </body>
+</html>

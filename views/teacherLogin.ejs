@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href="/stylesheets/teacherLogin.css"/>
+    <script src="/lib/jquery-3.1.1.min.js"></script>
+    <script src="/lib/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+  </head>
+  <body>
+    <!-- 返回按钮 -->
+    <div class="back-btn"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+
+    <!-- 注册 登录 -->
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+          <form id="registForm" οnsubmit="return false" action="" method="POST">
+              <h1>注 册</h1>
+              <input id="tno" type="text" class="form-input" name="tno" placeholder="职工号" />
+              <span id="tno-tip" class="form-tip"></span>
+              <input id="tname" type="text" class="form-input" name="tname" placeholder="姓名" />
+              <span id="tname-tip" class="form-tip"></span>
+              <input id="password1" type="password" class="form-input" name="password1" placeholder="密码" autocomplete="off"/>
+              <span id="password1-tip" class="form-tip"></span>
+              <input id="password2" type="password" class="form-input" name="password2" placeholder="确认密码" autocomplete="off"/>
+              <span id="password2-tip" class="form-tip"></span>
+              <button id="registBtn" type="button">注册</button>
+          </form>
+      </div>
+      <div class="form-container sign-in-container">
+          <form id="loginForm" οnsubmit="return false" action="" method="POST">
+              <h1>登 录</h1>
+              <input id="username" type="text" class="form-input" name="username" placeholder="用户名" />
+              <span id="username-tip" class="form-tip"></span>
+              <input id="password" type="password" name="password" class="form-input" placeholder="密码" autocomplete="off"/>
+              <span id="password-tip" class="form-tip"></span>
+              <button id="loginBtn" type="button" >登录</button>
+          </form>
+      </div>
+      <div class="overlay-container">
+          <div class="overlay">
+              <div class="overlay-panel overlay-left">
+                  <h1>已有账号？</h1>
+                  <p>请使用您的账号进行登录</p>
+                  <button class="ghost" id="signIn" type="button">登录</button>
+              </div>
+              <div class="overlay-panel overlay-right">
+                  <h1>没有账号？</h1>
+                  <p>立即注册加入我们吧</p>
+                  <button class="ghost" id="signUp" type="button">注册</button>
+              </div>
+          </div>
+      </div>
+    </div>
+  </body>
+  <script src="/javascripts/teacherLogin.js"></script>
+</html>

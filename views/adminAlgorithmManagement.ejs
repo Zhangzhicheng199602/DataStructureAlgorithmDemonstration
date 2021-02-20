@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href="/stylesheets/adminAlgorithmManagement.css"/>
+    <link rel="stylesheet" href="/lib/layui/css/layui.css" media="all">
+    <script src="/lib/jquery-3.1.1.min.js"></script>
+    <script src="/lib/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+    <script src="/font_alibaba_1.0/iconfont.js"></script>
+    <script src="/lib/layui/layui.js"></script>
+  </head>
+  <body>
+    <input id="curPage" type="hidden" value="<%= data.curPage %>">
+    <div class="top">
+        <div class="left">
+            <div id="back" class="back">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fanhui"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="right">
+            <div id="deleteMany" class="deleteMany">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-piliangshanchu"></use>
+                </svg>
+              </div>
+              <div class="user">
+                  <%= admin.aname + " (" + admin.ano + ")" %>
+              </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="layui-tab layui-tab-brief" lay-filter="algorithmManagement">
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <div class="guide">
+                        <input class="check" type="checkbox" name="allAlgorithm">
+                        <div class="index">序号</div>
+                        <div class="name">算法名</div>
+                        <div class="author">作者</div>
+                        <div class="state">状态</div>
+                        <div class="time">发布时间</div>
+                        <div class="zhanwei"></div>
+                    </div>
+                    <div class="content">
+                        <%  data.list.map(function (item, index){ %>
+                            <% var state = item.state ? "已发布" : "未发布";%>
+                            <div class="item">
+                                <input id="select_<%= item.id %>" class="check" type="checkbox" name="algorithmSelect" value="<%= item.id %>" onclick="algorithmBoxCheck(this)">
+                                <div class="index"><%= index + 1 %></div>
+                                <div class="name"><%= item.znname %>(<%= item.enname %>)</div>
+                                <div class="author"><%= item.author %></div>
+                                <div class="state"><%= state %></div>
+                                <div class="time"><%= item.time %></div>
+                            </div>
+                        <%  }) %>
+                    </div>
+                </div> 
+            </div>
+        </div>    
+    </div>
+    <div class="bottom">
+        <ul>
+            <% var pre = data.curPage - 1 > 0 ? data.curPage - 1 : data.curPage;%>
+            <% var next = data.curPage + 1 > data.toal ? data.curPage : parseInt(data.curPage) + 1;%>
+            <li><a <% if (data.curPage > 1) { %> href="/admin/algorithmManagement?page=<%= pre %>" <% } %> ><</a></li>
+            <% if (data.total > 0)  { %>
+                <%  if (data.total <= 10) { %>
+                    <% for (var i = 1; i <= data.total; i++) { %>
+                        <li><a href="/admin/algorithmManagement?page=<%= i %>"  <% if (data.curPage == i) { %> class="active" <% } %> > <%= i %> </a></li>
+                    <% } %>
+                <% } %>
+            <% } %>
+            <li><a <% if (data.curPage < data.total) { %> href="/admin/algorithmManagement?page=<%= next %>" <% } %> >></a></li>
+        </ul>
+    </div>
+  </body>
+  <script src="/javascripts/adminAlgorithmManagement.js"></script>
+</html>

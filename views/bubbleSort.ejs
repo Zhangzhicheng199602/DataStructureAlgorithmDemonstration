@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>冒泡排序</title>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/bubbleSort.css">
+        <script src="/font_alibaba_1.0/iconfont.js"></script>
+        <script src="/lib/jquery-3.1.1.min.js"></script>
+    </head>
+    <body>
+        <div class="top">
+            <div class="left">
+                <div class="back">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-fanhui"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="right">
+                <div class="user">
+                    <%= student.sname + " (" + student.sno + ")" %>
+                </div>
+            </div>
+        </div>
+		<div id="title">
+		冒泡排序
+		</div>
+        <div id="container">
+        </div>
+        <div id="log">
+        </div>
+		<div id="controller">
+            <input type="text" id="array" name="">
+            <div class="button" id="random">随机</div>
+            <div class="button" id="startAndPause">开始</div>
+            <div class="button" id="prev">上一步</div>
+            <div class="button" id="next">下一步</div>
+            <div id="progressBar"><div class="slider"></div>速度</div>
+            <div id="speedBar"></div>
+        </div>
+        <script type="text/javascript" src="/javascripts/bubbleSort.js"></script>
+    </body>
+</html>

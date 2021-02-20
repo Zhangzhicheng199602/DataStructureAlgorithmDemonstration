@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css'/>
+    <link rel='stylesheet' href="/stylesheets/teacherReadNote.css"/>
+    <script src="/lib/jquery-3.1.1.min.js"></script>
+    <script src="/lib/tinymce.min.js"></script>
+    <script src="/lib/FileSaver.js"></script>
+    <script src="/lib/jquery.wordexport.js"></script>
+    <script src="/lib/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+    <script src="/lib/html-docx.js"></script>
+    <script src="/font_alibaba_1.0/iconfont.js"></script>
+  </head>
+  <body>
+    <input id="curPage" type="hidden" value="<%= data.curPage %>">
+    <div class="top">
+        <div class="left">
+            <div id="back" class="back">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fanhui"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="right">
+            <div id="print" class="print">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-dayin"></use>
+                </svg>
+            </div>
+            <div class="user">
+                <%= teacher.tname + " (" + teacher.tno + ")" %>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content_background">
+            <input type="hidden" name="id" value="<%= note.id %>">
+            <div id="title" class="title"><%= note.title %></div>
+            <div id="desc" class="desc">
+                <span>作者：<%= note.author %></span>
+                <span>发表时间：<%= note.time %></span>
+            </div>
+            <div id="content" class="content"><%- note.content %></div>
+        </div>
+    </div>
+  </body>
+  <script src="/javascripts/teacherReadNote.js"></script>
+</html>
